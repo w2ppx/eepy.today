@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes appear {
+    0% {
+        @apply opacity-0 blur-sm;
+        transform: translateY(1rem);
+    }
+    
+    100% {
+        @apply opacity-100 blur-0;
+        transform: translateY(0);
+    }
+}
+
+@keyframes leaf {
+    0% {
+        @apply -top-8;
+        transform: translateX(0);
+    }
+
+    100% {
+        @apply top-full;
+        transform: translateX(-16vw) rotateX(180deg) rotateY(360deg);
+    }
+}
+
+@keyframes leaf2 {
+    0% {
+        @apply -top-8;
+        transform: translateX(0) rotateX(0) rotateY(0);
+    }
+
+    100% {
+        @apply top-full;
+        transform: translateX(16vw) rotateX(180deg) rotateY(360deg);
+    }
+}
+
+.animate-appear {
+    animation: appear .5s forwards;
+}
+
+.animate-leaf:nth-child(even) {
+    animation: leaf 10s linear infinite;
+}
+
+.animate-leaf:nth-child(odd) {
+    animation: leaf2 10s linear infinite;
+}
