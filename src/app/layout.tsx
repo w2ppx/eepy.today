@@ -3,6 +3,7 @@ import type { ReactNode } from "react"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Link from "next/link"
+import { env } from "@/env.mjs"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -30,8 +31,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 >
                     {children}
                 </main>
-                <footer className="mx-auto my-2 w-fit text-pink-400 text-xs">
-                    <Link href="https://otomir23.me" target="_blank">
+                <footer className="mx-auto my-2 w-fit text-xs flex flex-col items-center gap-1">
+                    {env.WEBRING_BASE_URL && (
+                        <div className="flex gap-2 text-sm">
+                            <Link href={`${env.WEBRING_BASE_URL}/prev`}>
+                                {"<- prev"}
+                            </Link>
+                            <span className="text-pink-600">
+                                webringy thingy
+                            </span>
+                            <Link href={`${env.WEBRING_BASE_URL}/next`}>
+                                {"next -->"}
+                            </Link>
+                        </div>
+                    )}
+                    <Link href="https://otomir23.me" target="_blank" className="text-pink-400">
                         made with {"<3"} by otomir23
                     </Link>
                 </footer>
