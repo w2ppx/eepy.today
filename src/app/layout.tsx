@@ -11,6 +11,9 @@ export const metadata: Metadata = {
         default: "wappx",
         template: "%s | wappx",
     },
+    other: {
+        "darkreader-lock": "true",
+    },
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
