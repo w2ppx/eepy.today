@@ -17,6 +17,9 @@ export default function Home() {
                     <ul className="text-neutral-300">
                         <li>python</li>
                         <li>sleeping</li>
+                        <li>
+                            <img src="https://buss.eepy.today/oxygen" alt="my main hobby" style={{ width: 100, height: 100 }} />
+                        </li>
                     </ul>
                 </section>
                 <section>
